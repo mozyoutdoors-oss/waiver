@@ -14,8 +14,10 @@
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'DM Sans', sans-serif; background: var(--tan); color: var(--ink); min-height: 100vh; }
-  .site-header { background: var(--ink); padding: 1.25rem 2rem; display: flex; align-items: center; justify-content: space-between; }
-  .site-header .brand { font-family: 'Libre Baskerville', serif; color: var(--tan); font-size: 1.1rem; letter-spacing: 0.02em; }
+  .site-header { background: var(--ink); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+  .site-header .brand { display: flex; align-items: center; gap: 0.75rem; }
+  .site-header .brand img { height: 40px; width: auto; display: block; }
+  .site-header .brand span { font-family: 'Libre Baskerville', serif; color: var(--tan); font-size: 1.1rem; letter-spacing: 0.02em; }
   .site-header .location-tag { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--teal-light); text-transform: uppercase; letter-spacing: 0.12em; }
   .waiver-hero { background: var(--teal); padding: 2.5rem 2rem 2rem; border-bottom: 3px solid var(--rust); }
   .waiver-hero .eyebrow { font-family: 'DM Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem; }
@@ -77,7 +79,10 @@
 <body>
 
 <header class="site-header">
-  <span class="brand">Mozy Outdoors</span>
+  <div class="brand">
+    <img src="https://mozyoutdoors.com/cdn/shop/files/Mozypatchlogo_d9c6880d-a264-43ee-b1eb-8a003ff5727f.png" alt="Mozy Outdoors">
+    <span>Mozy Outdoors</span>
+  </div>
   <span class="location-tag">Mountain Island Lake · Charlotte, NC</span>
 </header>
 
