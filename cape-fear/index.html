@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rental Agreement & Liability Waiver — Mozy Outdoors</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #2B2823; --teal: #216977; --teal-light: #2a8499;
+    --tan: #F5EFE6; --tan-mid: #EDE3D5; --rust: #CC5829;
+    --muted: #7a7269; --rule: #d8d0c4;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--tan); color: var(--ink); min-height: 100vh; }
+  .site-header { background: var(--ink); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+  .site-header .brand { display: flex; align-items: center; gap: 0.75rem; }
+  .site-header .brand img { height: 40px; width: auto; display: block; }
+  .site-header .brand span { font-family: 'Libre Baskerville', serif; color: var(--tan); font-size: 1.1rem; letter-spacing: 0.02em; }
+  .site-header .location-tag { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--teal-light); text-transform: uppercase; letter-spacing: 0.12em; }
+  .waiver-hero { background: var(--teal); padding: 2.5rem 2rem 2rem; border-bottom: 3px solid var(--rust); }
+  .waiver-hero .eyebrow { font-family: 'DM Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem; }
+  .waiver-hero h1 { font-family: 'Libre Baskerville', serif; font-size: clamp(1.4rem, 4vw, 2rem); color: #fff; line-height: 1.25; margin-bottom: 0.75rem; }
+  .waiver-hero .subtitle { font-size: 0.875rem; color: rgba(255,255,255,0.75); line-height: 1.6; max-width: 560px; }
+  .waiver-body { max-width: 760px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .section { margin-bottom: 2rem; background: #fff; border-radius: 4px; border: 1px solid var(--rule); overflow: hidden; }
+  .section-header { background: var(--tan-mid); border-bottom: 1px solid var(--rule); padding: 0.75rem 1.25rem; display: flex; align-items: center; gap: 0.75rem; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--rust); font-weight: 500; letter-spacing: 0.08em; background: rgba(204,88,41,0.1); padding: 0.2rem 0.5rem; border-radius: 2px; }
+  .section-title { font-family: 'Libre Baskerville', serif; font-size: 0.95rem; color: var(--ink); font-weight: 700; }
+  .section-body { padding: 1.25rem; }
+  p { font-size: 0.875rem; line-height: 1.7; color: #3a3530; margin-bottom: 0.75rem; }
+  p:last-child { margin-bottom: 0; }
+  ul, ol { padding-left: 1.25rem; margin-bottom: 0.75rem; }
+  li { font-size: 0.875rem; line-height: 1.7; color: #3a3530; margin-bottom: 0.35rem; }
+  .callout { background: rgba(204,88,41,0.06); border-left: 3px solid var(--rust); padding: 0.85rem 1rem; border-radius: 0 3px 3px 0; margin: 0.75rem 0; }
+  .callout p { font-size: 0.825rem; color: var(--ink); margin: 0; font-weight: 500; }
+  .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.5rem; }
+  .spec-item { background: var(--tan); border: 1px solid var(--rule); border-radius: 3px; padding: 0.6rem 0.85rem; }
+  .spec-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.2rem; }
+  .spec-value { font-size: 0.85rem; font-weight: 500; color: var(--ink); }
+  .ack-list { list-style: none; padding: 0; }
+  .ack-item { display: flex; align-items: flex-start; gap: 0.85rem; padding: 0.75rem 0; border-bottom: 1px solid var(--rule); }
+  .ack-item:last-child { border-bottom: none; }
+  .ack-item input[type="checkbox"] { width: 18px; height: 18px; min-width: 18px; margin-top: 2px; accent-color: var(--teal); cursor: pointer; }
+  .ack-item label { font-size: 0.85rem; line-height: 1.6; color: var(--ink); cursor: pointer; }
+  .ack-item label strong { color: var(--teal); }
+  .sig-block { background: #fff; border: 1px solid var(--rule); border-radius: 4px; padding: 1.5rem 1.25rem; margin-bottom: 1.5rem; }
+  .sig-block h3 { font-family: 'Libre Baskerville', serif; font-size: 1rem; margin-bottom: 1rem; color: var(--ink); }
+  .form-row { margin-bottom: 1rem; }
+  .form-row label { display: block; font-family: 'DM Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.35rem; }
+  .form-row input { width: 100%; padding: 0.65rem 0.85rem; border: 1px solid var(--rule); border-radius: 3px; font-family: 'DM Sans', sans-serif; font-size: 0.875rem; color: var(--ink); background: var(--tan); transition: border-color 0.2s; -webkit-appearance: none; }
+  .form-row input:focus { outline: none; border-color: var(--teal); background: #fff; }
+  .form-row.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .sig-canvas-wrap { border: 1px dashed var(--rule); border-radius: 3px; background: var(--tan); position: relative; margin-top: 0.35rem; }
+  canvas { display: block; width: 100%; height: 120px; cursor: crosshair; touch-action: none; }
+  .sig-clear { position: absolute; top: 0.5rem; right: 0.5rem; font-family: 'DM Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); background: none; border: 1px solid var(--rule); border-radius: 2px; padding: 0.2rem 0.5rem; cursor: pointer; }
+  .sig-clear:hover { color: var(--rust); border-color: var(--rust); }
+  .submit-area { text-align: center; }
+  .submit-btn { background: var(--teal); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 500; border: none; border-radius: 3px; padding: 1rem 2.5rem; cursor: pointer; letter-spacing: 0.02em; transition: background 0.2s, transform 0.1s; width: 100%; max-width: 360px; }
+  .submit-btn:hover { background: var(--teal-light); }
+  .submit-btn:active { transform: scale(0.99); }
+  .submit-btn:disabled { background: var(--muted); cursor: not-allowed; }
+  .submit-note { font-size: 0.75rem; color: var(--muted); margin-top: 0.75rem; line-height: 1.5; }
+  .success-screen { display: none; text-align: center; padding: 3rem 1.5rem; }
+  .success-screen .check { width: 56px; height: 56px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; }
+  .success-screen .check svg { width: 28px; height: 28px; }
+  .success-screen h2 { font-family: 'Libre Baskerville', serif; font-size: 1.4rem; margin-bottom: 0.5rem; }
+  .success-screen p { color: var(--muted); font-size: 0.875rem; }
+  .error-msg { display: none; background: rgba(204,88,41,0.08); border: 1px solid rgba(204,88,41,0.3); border-radius: 3px; padding: 0.75rem 1rem; font-size: 0.825rem; color: var(--rust); margin-bottom: 1rem; text-align: left; }
+  .waiver-footer { text-align: center; padding: 1.5rem; font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.08em; border-top: 1px solid var(--rule); }
+  @media (max-width: 480px) {
+    .spec-grid { grid-template-columns: 1fr; }
+    .form-row.two-col { grid-template-columns: 1fr; }
+    .site-header { flex-direction: column; align-items: flex-start; gap: 0.35rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <img src="https://mozyoutdoors.com/cdn/shop/files/Mozypatchlogo_d9c6880d-a264-43ee-b1eb-8a003ff5727f.png" alt="Mozy Outdoors">
+    <span>Mozy Outdoors</span>
+  </div>
+  <span class="location-tag">Cape Fear Region · New Hanover County, NC</span>
+</header>
+
+<div class="waiver-hero">
+  <div class="eyebrow">Before You Hit the Water</div>
+  <h1>Rental Agreement &amp;<br>Liability Waiver</h1>
+  <p class="subtitle">Please read each section carefully and complete all fields before your rental begins. This waiver must be signed by every adult renter in your party. After submission, you will continue to booking and payment.</p>
+</div>
+
+<div class="waiver-body">
+
+  <div class="section">
+    <div class="section-header"><span class="section-num">01</span><span class="section-title">The Vessel</span></div>
+    <div class="section-body">
+      <p>You are renting a <strong>GoBoat</strong> — an inflatable, fully electric watercraft owned, insured, and operated by Mozy Ventures LLC ("Mozy Outdoors"). Mozy Outdoors offers both the GoBoat Single (1-person) and GoBoat Double (2-person) depending on availability and your booking selection.</p>
+      <p>You are responsible for operating the vessel within the occupancy, weight, and speed limits of the specific model rented. These limits will be confirmed at check-in and are printed on the vessel.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><span class="section-num">02</span><span class="section-title">Rental Rules &amp; Operator Policy</span></div>
+    <div class="section-body">
+      <ul>
+        <li><strong>Minimum rental age is 18.</strong> You must be at least 18 years old to book and be the named renter on this agreement.</li>
+        <li><strong>Operators aged 16–17</strong> may operate a GoBoat only if an adult aged 21 or older is simultaneously renting a second GoBoat as part of the same booking and remains within visual range at all times.</li>
+        <li><strong>No one under the age of 16</strong> may operate this vessel under any circumstance.</li>
+        <li><strong>Do not exceed the rated occupancy or weight capacity of your vessel.</strong> These limits vary by model and are non-negotiable. Confirm your vessel's limits at check-in.</li>
+        <li><strong>Children under 13</strong> must wear a properly fitted, U.S. Coast Guard-approved personal flotation device (PFD) at all times while the vessel is underway. PFDs are provided — their use is your responsibility.</li>
+        <li><strong>No alcohol</strong> may be consumed by the operator before or during operation.</li>
+        <li>The vessel must remain within the designated operating area as briefed at check-in. Do not approach dams, spillways, commercial vessel channels, or restricted zones.</li>
+        <li>The emergency shut-off lanyard must be attached to the operator's person at all times while underway.</li>
+        <li><strong>Maximum rental duration is 4 hours.</strong> Please return to dock before battery depletion.</li>
+        <li>Return the vessel to the dock in the condition received. Report any damage immediately.</li>
+      </ul>
+      <div class="callout">
+        <p>This vessel is governed to 5 mph and is not capable of towing persons or watercraft. Do not attempt to tow anyone or anything.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><span class="section-num">03</span><span class="section-title">Battery Installation — Cape Fear Region</span></div>
+    <div class="section-body">
+      <p>The battery will be installed by Mozy Outdoors staff prior to your departure. <strong>Do not attempt to remove or reinstall the battery yourself.</strong> If the battery appears improperly seated, is making unusual sounds, or the motor is not responding normally, do not operate the vessel — notify Mozy Outdoors staff immediately.</p>
+      <p>Before departing, confirm:</p>
+      <ul>
+        <li>Battery is fully seated and the connection is secure</li>
+        <li>Motor responds to throttle at speed setting 1</li>
+        <li>Emergency shut-off lanyard is attached and functional</li>
+        <li>PFDs are on board and accessible</li>
+      </ul>
+      <p>A short GoBoat walkthrough video is available on the Mozy start page and may also be posted at the dock. Watching it before your first rental is strongly encouraged.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><span class="section-num">04</span><span class="section-title">Assumption of Risk</span></div>
+    <div class="section-body">
+      <p>I understand that operating a watercraft on open water involves inherent risks including but not limited to: adverse weather conditions, wakes from other vessels, submerged hazards, personal injury, and drowning. These risks exist even when all safety precautions are followed.</p>
+      <p>I acknowledge that the Cape Fear River, basin, and surrounding inland waterways may have <strong>commercial and recreational boat traffic</strong> that can produce significant wakes and wash. I agree to maintain awareness of other vessels, avoid shipping channels and restricted areas, and brace for wakes when necessary.</p>
+      <p>I acknowledge that these waterways may contain <strong>oyster beds and submerged shell deposits</strong> that can cause cuts to skin or puncture an inflatable vessel if grounded. I agree to avoid shallow areas, follow the designated operating zone, and remain alert to water depth.</p>
+      <p>I voluntarily choose to participate in this activity and assume full responsibility for all risks associated with my use of the GoBoat and the waterway, known and unknown, including risks resulting from the actions or inactions of others on the water.</p>
+      <p>I acknowledge that the GoBoat is an inflatable watercraft designed for calm recreational use. I agree to operate it within the stated limitations of the specific model rented and within my own skill and ability.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><span class="section-num">05</span><span class="section-title">Release of Liability</span></div>
+    <div class="section-body">
+      <p>In consideration of being permitted to rent and operate a GoBoat watercraft through Mozy Ventures LLC, I, on behalf of myself and my heirs, executors, administrators, and assigns, hereby release, waive, discharge, and covenant not to sue <strong>Mozy Ventures LLC</strong>, its owners, officers, employees, agents, and partner property operators (collectively, "Released Parties") from any and all liability, claims, demands, actions, or causes of action arising out of or related to any loss, damage, or injury — including death — that may be sustained by me or any minor in my care, whether caused by the negligence of the Released Parties or otherwise, while participating in this rental activity or while on the premises of the rental location.</p>
+      <p>I agree that this release shall be binding upon me and my heirs, next of kin, executors, administrators, and assigns.</p>
+      <div class="callout">
+        <p>If you are signing on behalf of a minor in your care, your signature below constitutes acceptance of these terms on behalf of that minor and yourself as their guardian.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><span class="section-num">06</span><span class="section-title">Indemnification</span></div>
+    <div class="section-body">
+      <p>I agree to indemnify and hold harmless the Released Parties from any loss, liability, damage, cost, or expense — including reasonable attorney's fees — that they may incur due to my participation in this activity, whether caused by my negligence or otherwise, including any claims made by third parties arising from my use of the vessel.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><span class="section-num">07</span><span class="section-title">Acknowledgments</span></div>
+    <div class="section-body">
+      <p style="margin-bottom:1rem;">Please check each box to confirm your understanding:</p>
+      <ul class="ack-list">
+        <li class="ack-item">
+          <input type="checkbox" id="ack1">
+          <label for="ack1">I have watched or will watch the GoBoat orientation video before departing. I understand basic vessel operation, how to attach the emergency lanyard, and how to safely return to dock.</label>
+        </li>
+        <li class="ack-item">
+          <input type="checkbox" id="ack2">
+          <label for="ack2">I confirm the boat's battery has been installed by the host and the vessel is ready to operate. I will not attempt to remove or reinstall the battery.</label>
+        </li>
+        <li class="ack-item">
+          <input type="checkbox" id="ack3">
+          <label for="ack3">I confirm that I will not exceed the <strong>rated occupancy or weight capacity</strong> of the vessel I am renting. I understand these limits vary by model and will be confirmed at check-in.</label>
+        </li>
+        <li class="ack-item">
+          <input type="checkbox" id="ack4">
+          <label for="ack4">If any passenger in my party is under 13 years of age, I confirm they will wear a U.S. Coast Guard-approved PFD at all times while underway.</label>
+        </li>
+        <li class="ack-item">
+          <input type="checkbox" id="ack5">
+          <label for="ack5">I confirm that any operator of this vessel is at least <strong>18 years old</strong>, or is aged 16–17 with a 21+ adult simultaneously operating a second GoBoat as part of this booking.</label>
+        </li>
+        <li class="ack-item">
+          <input type="checkbox" id="ack6">
+          <label for="ack6">I have read and understand the Assumption of Risk, Release of Liability, and Indemnification sections above. I sign this agreement freely and voluntarily, without duress.</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sig-block">
+    <h3>Renter Information &amp; Signature</h3>
+    <div class="form-row two-col">
+      <div><label for="first-name">First Name</label><input type="text" id="first-name" placeholder="First"></div>
+      <div><label for="last-name">Last Name</label><input type="text" id="last-name" placeholder="Last"></div>
+    </div>
+    <div class="form-row">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="your@email.com">
+    </div>
+    <div class="form-row two-col">
+      <div><label for="dob">Date of Birth</label><input type="date" id="dob"></div>
+      <div><label for="rental-date">Rental Date</label><input type="date" id="rental-date"></div>
+    </div>
+    <div class="form-row">
+      <label>Signature <span style="color:var(--muted);font-size:0.6rem;text-transform:lowercase;letter-spacing:0">(draw with finger or mouse)</span></label>
+      <div class="sig-canvas-wrap">
+        <canvas id="sig-canvas"></canvas>
+        <button class="sig-clear" onclick="clearSig()">Clear</button>
+      </div>
+    </div>
+    <div class="form-row">
+      <label for="sign-date">Date Signed</label>
+      <input type="date" id="sign-date">
+    </div>
+  </div>
+
+  <div id="error-msg" class="error-msg"></div>
+
+  <div class="submit-area">
+    <button class="submit-btn" id="submit-btn" onclick="submitWaiver()">I Agree — Submit Waiver</button>
+    <p class="submit-note">By submitting, you confirm you have read this entire agreement, understand its terms, and agree to be bound by it. A copy will be sent to the email address provided.</p>
+  </div>
+
+  <div class="success-screen" id="success-screen">
+    <div class="check">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+    <h2>Waiver Received</h2>
+    <p>Thanks — you're all set. A confirmation has been sent to your email.<br>Have a great time on the water.</p>
+    <p style="margin-top:1.5rem;font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);letter-spacing:0.08em;">MOZY OUTDOORS · CAPE FEAR REGION</p>
+  </div>
+
+</div>
+
+<div class="waiver-footer">
+  Mozy Ventures LLC · mozyoutdoors.com · (910) 216-0953 · mozyoutdoors@gmail.com
+</div>
+
+<script>
+  const canvas = document.getElementById('sig-canvas');
+  const ctx = canvas.getContext('2d');
+  let drawing = false;
+  let hasSig = false;
+
+  function resizeCanvas() {
+    const ratio = window.devicePixelRatio || 1;
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * ratio;
+    canvas.height = rect.height * ratio;
+    ctx.scale(ratio, ratio);
+    ctx.strokeStyle = '#2B2823';
+    ctx.lineWidth = 1.8;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  function getPos(e) {
+    const rect = canvas.getBoundingClientRect();
+    if (e.touches) return { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
+    return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+  }
+
+  canvas.addEventListener('mousedown', e => { drawing = true; const p = getPos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); });
+  canvas.addEventListener('mousemove', e => { if (!drawing) return; const p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); hasSig = true; });
+  canvas.addEventListener('mouseup', () => drawing = false);
+  canvas.addEventListener('mouseleave', () => drawing = false);
+  canvas.addEventListener('touchstart', e => { e.preventDefault(); drawing = true; const p = getPos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); }, { passive: false });
+  canvas.addEventListener('touchmove', e => { e.preventDefault(); if (!drawing) return; const p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); hasSig = true; }, { passive: false });
+  canvas.addEventListener('touchend', () => drawing = false);
+
+  function clearSig() { resizeCanvas(); hasSig = false; }
+
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('sign-date').value = today;
+  document.getElementById('rental-date').value = today;
+
+  function getAge(dob) {
+    const today = new Date();
+    const birth = new Date(dob);
+    let age = today.getFullYear() - birth.getFullYear();
+    const m = today.getMonth() - birth.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) age--;
+    return age;
+  }
+
+  function showError(msg) {
+    const el = document.getElementById('error-msg');
+    el.textContent = msg;
+    el.style.display = 'block';
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  function hideError() { document.getElementById('error-msg').style.display = 'none'; }
+
+  async function submitWaiver() {
+    hideError();
+    const firstName = document.getElementById('first-name').value.trim();
+    const lastName = document.getElementById('last-name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const dob = document.getElementById('dob').value;
+    const rentalDate = document.getElementById('rental-date').value;
+    const signDate = document.getElementById('sign-date').value;
+    const acks = [1,2,3,4,5,6].map(n => document.getElementById('ack'+n).checked);
+
+    if (!firstName || !lastName) return showError('Please enter your full name.');
+    if (!email || !email.includes('@')) return showError('Please enter a valid email address.');
+    if (!dob) return showError('Please enter your date of birth.');
+    if (getAge(dob) < 18) return showError('You must be at least 18 years old to rent a GoBoat.');
+    if (!rentalDate) return showError('Please enter your rental date.');
+    if (!signDate) return showError('Please enter today\'s date.');
+    if (!acks.every(Boolean)) return showError('Please check all acknowledgment boxes before submitting.');
+    if (!hasSig) return showError('Please sign in the signature box above.');
+
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+
+    const sigData = canvas.toDataURL('image/png');
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'a5171e72-d76f-418a-b0dc-715c731d7bef',
+          subject: `GoBoat Waiver — ${firstName} ${lastName} — Cape Fear Region — ${rentalDate}`,
+          from_name: 'Mozy Outdoors Waiver System',
+          email: email,
+          name: `${firstName} ${lastName}`,
+          location: 'Cape Fear Region, New Hanover County NC',
+          rental_date: rentalDate,
+          date_of_birth: dob,
+          date_signed: signDate,
+          acknowledgments_confirmed: 'All 6 items checked',
+          signature_image: sigData
+        })
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        document.querySelector('.waiver-body').style.display = 'none';
+        document.getElementById('success-screen').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'I Agree — Submit Waiver';
+        showError('Submission failed. Please try again or contact Mozy Outdoors directly.');
+      }
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'I Agree — Submit Waiver';
+      showError('Network error. Please check your connection and try again.');
+    }
+  }
+</script>
+</body>
+</html>
