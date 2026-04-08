@@ -67,6 +67,7 @@
   .success-screen .check svg { width: 28px; height: 28px; }
   .success-screen h2 { font-family: 'Libre Baskerville', serif; font-size: 1.4rem; margin-bottom: 0.5rem; }
   .success-screen p { color: var(--muted); font-size: 0.875rem; }
+  .countdown-text { font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--teal); margin-top: 1rem; letter-spacing: 0.04em; }
   .error-msg { display: none; background: rgba(204,88,41,0.08); border: 1px solid rgba(204,88,41,0.3); border-radius: 3px; padding: 0.75rem 1rem; font-size: 0.825rem; color: var(--rust); margin-bottom: 1rem; text-align: left; }
   .waiver-footer { text-align: center; padding: 1.5rem; font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.08em; border-top: 1px solid var(--rule); }
   @media (max-width: 480px) {
@@ -241,7 +242,8 @@
       </svg>
     </div>
     <h2>Waiver Received</h2>
-    <p>Thanks — you're all set. A confirmation has been sent to your email.<br>Have a great time on the water.</p>
+    <p>Waiver received — taking you to booking</p>
+    <p class="countdown-text" id="countdown-text">Redirecting in 3...</p>
     <p style="margin-top:1.5rem;font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);letter-spacing:0.08em;">MOZY OUTDOORS · CAPE FEAR REGION</p>
   </div>
 
@@ -252,6 +254,8 @@
 </div>
 
 <script>
+  const BOOQABLE_URL = 'https://mozy-ventures-llc.booqableshop.com/collections/cape-fear';
+
   const canvas = document.getElementById('sig-canvas');
   const ctx = canvas.getContext('2d');
   let drawing = false;
@@ -357,6 +361,18 @@
         document.querySelector('.waiver-body').style.display = 'none';
         document.getElementById('success-screen').style.display = 'block';
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        let count = 3;
+        const countdownEl = document.getElementById('countdown-text');
+        const timer = setInterval(() => {
+          count--;
+          if (count > 0) {
+            countdownEl.textContent = 'Redirecting in ' + count + '...';
+          } else {
+            clearInterval(timer);
+            countdownEl.textContent = 'Redirecting now...';
+            window.location.href = BOOQABLE_URL;
+          }
+        }, 1000);
       } else {
         btn.disabled = false;
         btn.textContent = 'I Agree — Submit Waiver';
